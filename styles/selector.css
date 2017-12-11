@@ -1,0 +1,42 @@
+body {
+  font-family: cursive;
+}
+
+article {
+  font-weight: bolder;
+}
+
+article.spacer {
+  padding: 15px;
+  margin: 25px;
+  border: thin lightgray solid;
+}
+.babyBlueBackground {
+  background-color: blue;
+}
+
+.grayBackground {
+  background-color: gray;
+}
+
+.blackBackground {
+  background-color: black;
+}
+
+.whitetext {
+  color: white;
+}
+
+.grayBackground {
+  background-color: gray;
+}
+
+.purpletext {
+}
+
+
+section.spacer.babyBlueBackground {
+    padding: 20px;
+    margin: 30px;
+    border: thin lightgray solid;
+  }
