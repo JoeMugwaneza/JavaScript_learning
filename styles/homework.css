@@ -9,13 +9,10 @@
 }
 
 body {
-  color:#635959;
   font-family: News Cycle;
 }
 
 header {
-  background-color: #242323;
-  color: #EFEFEF;
   padding: 20px 50px;
   font-family: Contail One;
 }
@@ -24,18 +21,11 @@ header > h1 {
   font-size: 4em;
 }
 
-article > h3, h4 {
-  color: #8C1018;
-}
 
 article {
   margin: 5px 0px;
   padding: 5px 5px;
   box-shadow: -1px 1px 6px #888888;
-}
-
-article a {
-  color: #314052;
 }
 
 article > time {
@@ -49,19 +39,48 @@ main {
 }
 
 main figure > figcaption {
-  content: 'Pictured above: '
   font-size: 0.7em;
   font-style: italic;
+}
+
+main figure > figcaption::before {
+  content: 'Pictured above: '
   font-weight: bold;
 }
 
-main > h3 {
-  font-size: 2em;
+
+@media not print {
+  body {
+    color:#635959;
+  }
+  header {
+    background-color: #242323;
+    color: #EFEFEF;
+  }
+   h3, article h4 {
+    color: #8C1018;
+  }
+  article > a {
+    color: #314052;
+  }
+
+  main > h3 {
+    font-size: 2em;
+  }
 }
 
 @media print {
-  body {
-    color: white;
+  header {
+    padding: 0px;
   }
-  
+  article {
+    box-shadow: none;
+  }
+  header h1 {
+    font-size: 2em;
+  }
+
+  header h2 {
+    display: none;
+  }
 }
