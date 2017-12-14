@@ -1,0 +1,19 @@
+@font-face {
+  font-family: Caveat;
+  src: url('../files/caveat.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: Chonburi;
+  src:url('../files/chonburi.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Itim;
+  src: url('../files/itim.ttf') format('truetype');
+}
+
+body {
+  font-family: Itim;
+}
