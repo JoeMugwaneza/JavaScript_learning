@@ -116,24 +116,58 @@
 
 // console.log(plusOne([5, 6]));
 
-function stringFunctor(value, fn){
-    let chars = value.split("")
+// function stringFunctor(value, fn){
+//     let chars = value.split("")
 
-    return chars.map(function(char){
-        return String.fromCharCode(fn(char.charCodeAt(0)))
-    }).join("")
+//     return chars.map(function(char){
+//         return String.fromCharCode(fn(char.charCodeAt(0)))
+//     }).join("")
 
 
-}
+// }
 
-function plusOne(value){
-    return value + 1;
-}
+// function plusOne(value){
+//     return value + 1;
+// }
 
-function minusOne(value){
-    return value - 1;
-}
+// function minusOne(value){
+//     return value - 1;
+// }
 
-console.log([10, 15].map(plusOne));
+// console.log([10, 15].map(plusOne));
 
-console.log(stringFunctor("BFJ", plusOne));
+// console.log(stringFunctor("BFJ", plusOne));
+
+// const dragons = [
+//     {name: 'Fluffykins', health: 70},
+//     {name: 'Deathlord', health: 65000},
+//     {name: 'Little pizza', health: 2}
+// ]
+
+// const names = dragons.map(dragon => dragon.name);
+
+// console.log(names);
+
+
+const fs = require('fs')
+const highland = require('highland')
+highland(fs.createReadStream('customers.csv', 'utf8'))
+    .split()
+    .map(line => line.split(','))
+    .map(parts =>({
+        name: parts[0],
+        numPurchases: parts[1]
+    }))
+    .filter(customer => customer.numPurchases > 2)
+    .map(customer => customer.name)
+    .each(x => console.log('each: ', x))
+
+// const stupidNumberstream = {
+//     each: (callback) =>{
+//         setTimeout(() => callback(1), 1000)
+//         setTimeout(() => callback(2), 2000)
+//         setTimeout(() => callback(3), 3000)
+//     }
+// }
+
+// createStupidNumberStream.each(console.log);
